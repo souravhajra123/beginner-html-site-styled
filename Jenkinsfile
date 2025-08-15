@@ -18,9 +18,9 @@ pipeline {
       }
       steps {
         script {
-          sh 'sudo docker build . -t souravhajra12345/A2' 
+          sh 'sudo docker build . -t souravhajra12345/a2' 
           sh 'sudo docker login -u ${DOCKERHUB_CREDENTIALS_USR} -p ${DOCKERHUB_CREDENTIALS_PSW}' 
-          sh 'sudo docker push souravhajra12345/A2' 
+          sh 'sudo docker push souravhajra12345/a2' 
         }
       }
     }
@@ -31,7 +31,7 @@ pipeline {
       steps {
         script {
           sh 'sudo docker rm -f C1'
-          sh 'sudo docker run -dit -p 99:80 --name C1 souravhajra12345/A2'
+          sh 'sudo docker run -dit -p 99:80 --name C1 souravhajra12345/a2'
         }
       }
     }
